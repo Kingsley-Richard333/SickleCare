@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Dashboard | SickleCare</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/routing.js"></script>
+  </head>
+  <body data-page="patientDashboard">
+    <header id="navbar"></header>
+    <main class="container">
+      <section class="card banner">
+        <h2>Welcome, <span id="patientName"></span></h2>
+        <p class="helper">
+          Wishing you a calm, healthy day. Track symptoms below.
+        </p>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <h3>Symptom Tracker</h3>
+          <div class="row wrap">
+            <label>
+              <span>View Range</span>
+              <select id="range">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </label>
+            <label>
+              <span>Pain Region</span>
+              <select id="region">
+                <option>Head</option>
+                <option>Chest</option>
+                <option>Back</option>
+                <option>Joints</option>
+                <option>Legs</option>
+                <option>Arms</option>
+                <option>Abdomen</option>
+              </select>
+            </label>
+            <label>
+              <span>Severity (1–10)</span>
+              <input type="range" id="severity" min="1" max="10" value="1" />
+            </label>
+          </div>
+          <label class="full">
+            <span>Notes / Description</span>
+            <textarea id="notes" rows="3"></textarea>
+          </label>
+          <div class="actions">
+            <button id="saveSymptom" class="button primary">Save Entry</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Sore Tracker</h3>
+          <label>
+            <span>Sore Location</span>
+            <input id="soreLocation" />
+          </label>
+          <label>
+            <span>Healing Status</span>
+            <select id="soreStatus">
+              <option>New</option>
+              <option>Improving</option>
+              <option>Healed</option>
+            </select>
+          </label>
+          <div class="upload-ph">
+            <div class="helper">Upload Image (placeholder)</div>
+          </div>
+          <div class="actions">
+            <button id="saveSore" class="button">Save Sore</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <h3>Pain Frequency</h3>
+        <canvas id="painChart" height="140"></canvas>
+      </section>
+
+      <section class="card">
+        <h3>Suggestions for Mild Symptoms</h3>
+        <ul id="suggestions" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h3>Quick Actions</h3>
+        <div class="row">
+          <a class="button" href="./doctor-list.html"
+            >Find Nearby Doctors/Hospitals</a
+          >
+          <button id="chatBtn" class="button">Chat with Doctor</button>
+        </div>
+      </section>
+
+      <dialog id="chatModal" class="modal chat-modal">
+        <div class="card chat-container">
+          <div class="chat-header">
+            <h3>Chat with Doctor</h3>
+            <button id="closeChat" class="button" aria-label="Close">✕</button>
+          </div>
+          <div class="chat-content">
+            <div class="chat-sidebar">
+              <h4>Available Doctors</h4>
+              <div id="doctorList" class="chat-list"></div>
+            </div>
+            <div class="chat-main">
+              <div id="chatMessages" class="chat-messages"></div>
+              <div class="chat-input-area">
+                <input
+                  type="text"
+                  id="chatInput"
+                  placeholder="Type your message..."
+                />
+                <button id="sendMessage" class="button primary">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <script src="../js/routing.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/patient-dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symptom Check | SickleCare</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script defer src="../../js/script.js"></script>
+  </head>
+  
+  <body data-page="symptom">
+    <main class="container section">
+      <div class="card form-card">
+        <h2>Symptom Check</h2>
+        <form id="symptomForm" class="list">
+          <div class="range-group">
+            <label for="pain">Pain</label>
+            <input type="range" id="pain" min="0" max="10" value="0" />
+            <span class="badge" data-output="pain">0</span>
+          </div>
+          <div class="range-group">
+            <label for="fatigue">Fatigue</label>
+            <input type="range" id="fatigue" min="0" max="10" value="0" />
+            <span class="badge" data-output="fatigue">0</span>
+          </div>
+          <div class="range-group">
+            <label for="fever">Fever</label>
+            <input type="range" id="fever" min="0" max="10" value="0" />
+            <span class="badge" data-output="fever">0</span>
+          </div>
+          <div class="range-group">
+            <label for="dizziness">Dizziness</label>
+            <input type="range" id="dizziness" min="0" max="10" value="0" />
+            <span class="badge" data-output="dizziness">0</span>
+          </div>
+          <div class="btn-row">
+            <button class="button primary" type="submit">
+              Assess Severity
+            </button>
+          </div>
+        </form>
+        <div id="symptomResult" class="section"></div>
+      </div>
+    </main>
+    <script src="../../js/routing.js"></script>
+  </body>
+</html>

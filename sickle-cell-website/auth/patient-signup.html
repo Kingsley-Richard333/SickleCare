@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Signup | SickleCare</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script defer src="../js/script.js"></script>
+  </head>
+  <body data-page="patientSignup">
+    <header id="navbar"></header>
+    <main class="container">
+      <div class="card form-card">
+        <h2>Patient Signup</h2>
+        <form id="patientSignup" class="grid">
+          <label>
+            <span>Full Name</span>
+            <input name="fullName" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" minlength="6" required />
+          </label>
+          <label>
+            <span>Age</span>
+            <input type="number" name="age" min="0" required />
+          </label>
+          <label>
+            <span>Gender</span>
+            <select name="gender" required>
+              <option value="">Select</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            <span>Genotype</span>
+            <select name="genotype" required>
+              <option value="">Select</option>
+              <option>SS</option>
+              <option>SC</option>
+              <option>AS</option>
+              <option>AA</option>
+            </select>
+          </label>
+          <label>
+            <span>Location</span>
+            <input name="location" required />
+          </label>
+          <label class="full">
+            <span>Emergency Contact</span>
+            <input name="emergencyContact" required />
+          </label>
+          <div class="actions full">
+            <button class="button primary" type="submit">Create Account</button>
+            <a class="button" href="./patient-login.html"
+              >Have an account? Log in</a
+            >
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="../js/routing.js"></script>
+    <script src="../js/auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Dashboard | SickleCare</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/routing.js"></script>
+  </head>
+  <body data-page="doctorDashboard">
+    <header id="navbar"></header>
+    <main class="container grid-layout">
+      <aside class="sidebar card">
+        <h3>Menu</h3>
+        <nav class="list">
+          <a class="button" href="#nearby">Nearby Patients</a>
+          <a class="button" href="#availability">Availability</a>
+          <a class="button" href="#profile">Profile</a>
+          <a class="button" href="#interact">Interactions</a>
+          <a class="button" href="#ratings">Ratings</a>
+        </nav>
+      </aside>
+
+      <section class="content">
+        <article class="card banner">
+          <h2>Welcome, Dr. <span id="doctorName"></span></h2>
+          <p class="helper">
+            Have a great shift. Your status can be toggled below.
+          </p>
+        </article>
+
+        <article id="nearby" class="card">
+          <h3>Nearby Patients</h3>
+          <div id="patientList" class="table"></div>
+        </article>
+
+        <article id="availability" class="card">
+          <h3>Availability & Status</h3>
+          <label class="toggle">
+            <input id="statusToggle" type="checkbox" />
+            <span>Available for Consultation</span>
+          </label>
+          <div class="helper" id="statusNote"></div>
+        </article>
+
+        <article id="profile" class="card">
+          <h3>Doctor Profile</h3>
+          <div id="profileInfo" class="list"></div>
+        </article>
+
+        <article id="interact" class="card">
+          <h3>Patient Interaction</h3>
+          <div class="row">
+            <button class="button primary" id="chatPatient">Open Chat</button>
+            <button class="button" id="callPatient">Call Patient</button>
+            <button class="button" id="markComplete">
+              Consultation Completed
+            </button>
+          </div>
+          <div id="interactionNote" class="helper"></div>
+        </article>
+
+        <article id="ratings" class="card">
+          <h3>Ratings & Feedback</h3>
+          <div id="ratingsList" class="list"></div>
+        </article>
+      </section>
+    </main>
+
+    <dialog id="patientModal" class="modal">
+      <div class="card">
+        <h3>Patient Details</h3>
+        <div id="patientDetail" class="list"></div>
+        <div class="row">
+          <button id="closePatientModal" class="button">Close</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="chatModal" class="modal chat-modal">
+      <div class="card chat-container">
+        <div class="chat-header">
+          <h3>Chat with Patients</h3>
+          <button id="closeChat" class="button" aria-label="Close">✕</button>
+        </div>
+        <div class="chat-content">
+          <div class="chat-sidebar">
+            <h4>Patients</h4>
+            <div id="chatPatientList" class="chat-list"></div>
+          </div>
+          <div class="chat-main">
+            <div id="chatMessages" class="chat-messages"></div>
+            <div class="chat-input-area">
+              <input
+                type="text"
+                id="chatInput"
+                placeholder="Type your message..."
+              />
+              <button id="sendMessage" class="button primary">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <script src="../js/routing.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/doctor-dashboard.js"></script>
+  </body>
+</html>
