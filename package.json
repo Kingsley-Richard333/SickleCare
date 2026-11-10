@@ -1,0 +1,30 @@
+{
+  "name": "sicklecare",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "android": "vite build && cap sync android && cap open android",
+    "ios": "vite build && cap sync ios && cap open ios",
+    "sync": "vite build && cap sync",
+    "test": "node --test tests/assess.test.js tests/i18n.test.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
+    "@capacitor/local-notifications": "^8.0.0",
+    "@supabase/supabase-js": "^2.45.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.26.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0",
+    "@vitejs/plugin-react": "4.3.2",
+    "vite": "5.4.8"
+  }
+}
